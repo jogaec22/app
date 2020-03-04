@@ -34,7 +34,6 @@ export class MedicamentoFormComponent implements OnInit {
       if(!id) return;  
 
       this._medicamentoService.get(id).subscribe((res) =>{
-      	console.log('res', res);
         this.model = res; 
       });      
     });
@@ -82,14 +81,12 @@ export class MedicamentoFormComponent implements OnInit {
   ];
 
   onSubmit() {
-  	console.log('model', this.model);
     if (!this.form.valid) return;
 
-	this._medicamentoService.saveOrUpdate(this.model).subscribe(res=>{
-		this._router.navigate(['/medicamentos']);
-	}, err=>{
-		console.log('err', err);
-		alert('Ha ocurrido un error al guardar el medicamento, concate al administrador');
-	});    
+  	this._medicamentoService.saveOrUpdate(this.model).subscribe(res=>{
+  		this._router.navigate(['/medicamentos']);
+  	}, err=>{
+  		alert('Ha ocurrido un error al guardar el medicamento, concate al administrador');
+  	});    
   }  
 }

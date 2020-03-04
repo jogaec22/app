@@ -63,7 +63,6 @@ export class MedicamentoService {
     This is only called when the user presses Enter in the filter text box in the medication listing component.
   */
   public filterByName(filtro: string){
-    console.log('filtro to send', '?filter={"where":{"name":{"like":"'+filtro+'","options":"i"}}}')
     return this._http.get<Medicamento[]>(this.urlApi+'?filter={"where":{"name":{"like":"'+filtro+'","options":"i"}}}');
   }
 }

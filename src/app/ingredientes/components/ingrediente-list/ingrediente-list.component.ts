@@ -32,8 +32,7 @@ export class IngredienteListComponent implements OnInit {
         this.message = "No se lograron obtener los Ingredientes, contacte al administrador";
     });
     if(this.ingredientes && this.ingredientes.length == 0)
-      this.message = 'No existen ingredientes registrados'; 
-    console.log('ingredientes es', this.ingredientes);    
+      this.message = 'No existen ingredientes registrados';   
   }
 
   public delete(id){
@@ -46,7 +45,6 @@ export class IngredienteListComponent implements OnInit {
 
   public verDetalle(ing){
     this.ingrediente = ing;
-    console.log('ver detalles', ing);
   }
 
   public ocultarDetalle(){

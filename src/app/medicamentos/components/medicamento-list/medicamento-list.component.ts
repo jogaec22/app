@@ -26,7 +26,6 @@ export class MedicamentoListComponent implements OnInit {
 
   private _getAll(){
   	this._medicamentoService.getAll().subscribe( res=>{
-      console.log('res', res);
   		this.medicamentos = res;
   		this.message = !res || res.length == 0 ? 'No existen medicamentos registrados' : null;
   	}, err=>{
@@ -46,7 +45,6 @@ export class MedicamentoListComponent implements OnInit {
   }
 
   filtrar(val){
-    console.log('value', val);
     this._medicamentoService.filterByName(val).subscribe( res=>{
       this.medicamentos = res;
       this.message = !res || res.length == 0 ? 'No existen medicamentos con el filtro proprocionado' : null;

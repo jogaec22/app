@@ -74,7 +74,7 @@ export class IngredienteFormComponent implements OnInit {
 
   async onSubmit() {
     if (!this.form.valid) return;
-    console.log('model', this.model);
+
     let res = await this._ingredienteService.saveOrUpdate(this.model).toPromise().catch(
       err=>{
         this.model = null;
