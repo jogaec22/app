@@ -1,0 +1,42 @@
+.nav > li > a{
+    padding: 15px 7px;
+}
+.navbar-header{
+    float: left;
+    width: 10%;
+}
+.navbar-collapse{
+    float: left;
+    width: 90%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.dropdown-menu > li > a,
+a{ cursor:pointer;
+}
+.navbar-left,
+.navbar-collapse .navbar-nav.navbar-left:first-child{
+    width: 48%;
+    margin-left: 0;
+}
+.navbar-left li:first-child a.dropdown-toggle{
+    padding-left: 5px;
+    padding-right: 0;
+    padding-top: 16px;
+}
+.navbar-center {
+    width: 8%;
+}
+.navbar-center a.dropdown-toggle{
+    padding-right: 0;
+    padding-left: 0;
+}
+.navbar-right{
+    width: 44%;
+}
+
+.dropdown-menu > li > a,
+.navbar-nav .open .dropdown-menu > li > a, .navbar-nav .open .dropdown-menu .dropdown-header{
+	padding: 2px 0;
+}

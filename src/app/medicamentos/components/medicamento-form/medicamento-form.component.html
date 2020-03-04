@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="py-3">    
+    <h5>Registrar Medicamento</h5>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <formly-form
+          [form]="form"
+          [model]="model"
+          [fields]="fields">
+        </formly-form>
+        
+        <button class="btn btn-primary" type="submit">
+          Save
+        </button>
+
+        <button class="btn btn-danger" type="reset">
+          Reset
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

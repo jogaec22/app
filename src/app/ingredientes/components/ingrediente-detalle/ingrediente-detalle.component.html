@@ -1,0 +1,16 @@
+<br>
+<strong>Ingrediente: </strong> {{ingrediente.name}}
+
+<div *ngIf="ingrediente.medicamento">
+	Medicamento asociado:
+	<ul>
+		<li><strong>Name:</strong> {{ingrediente.medicamento.name}}</li>
+		<li><strong>Posology:</strong> {{ingrediente.medicamento.posology}}</li>
+		<li><strong>Stock:</strong> {{ingrediente.medicamento.stock}}</li>
+		<li><strong>Expiration Date:</strong> {{ingrediente.medicamento.expiration_date}}</li>
+	</ul>
+</div>
+
+<div *ngIf="!ingrediente.medicamento">
+	<strong>No pertenece a ningún medicamento</strong>
+</div>
