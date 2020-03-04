@@ -5,20 +5,8 @@
     </div>
     <div class="col-lg-6 col-md-6">
       <div class="input-group">
-        <input type="text" name="" placeholder="filtro" class="form-control">
-      </div>
-        <!-- <form class="navbar-form pull-right">
-            <div class="input-group">
-                <input type="search" name="search" class="form-control mayusculas" placeholder="Busqueda"
-                       value="{{ filtro }}"/>
-                <span class="input-group-btn">
-                    {% if filtro %}
-                        <button type="button" class="btn btn-danger" id="todos"><i
-                                class="fa fa-refresh"></i></button>{% endif %}
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> Buscar</button>
-                </span>
-            </div>
-        </form> -->
+        <input type="text" placeholder="filtro" class="form-control" (keyup.enter)='filtrar($event.target.value)'>
+      </div>        
     </div>
 
 </div>
@@ -44,7 +32,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngIf="!medicamentos">
+          <tr *ngIf="!medicamentos || medicamentos.length==0">
             <td colspan="6" style="text-align: center;">{{message}}</td>
           </tr>
           <tr *ngFor="let m of medicamentos; index as i">

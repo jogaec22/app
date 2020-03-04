@@ -26,8 +26,9 @@ export class MedicamentoListComponent implements OnInit {
 
   private _getAll(){
   	this._medicamentoService.getAll().subscribe( res=>{
+      console.log('res', res);
   		this.medicamentos = res;
-  		this.message = !res ? 'No existen medicamentos registrados' : null;
+  		this.message = !res || res.length == 0 ? 'No existen medicamentos registrados' : null;
   	}, err=>{
   		this.message = "No se lograron obtener los medicamentos, contacte al administrador";
   		alert("Error al obtener listado de Medicamentos, contacte con el administrador");
@@ -42,6 +43,17 @@ export class MedicamentoListComponent implements OnInit {
         alert('Error al eliminar medicamento, contacte con el administrador');
       }
     );
+  }
+
+  filtrar(val){
+    console.log('value', val);
+    this._medicamentoService.filterByName(val).subscribe( res=>{
+      this.medicamentos = res;
+      this.message = !res || res.length == 0 ? 'No existen medicamentos con el filtro proprocionado' : null;
+    }, err=>{
+      this.message = "No se lograron filtrar los medicamentos, contacte al administrador";
+      alert("Error al obtener listado de Medicamentos con el filtro indicado, contacte con el administrador");
+    });
   }
 
 }
